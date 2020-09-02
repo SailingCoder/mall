@@ -1,0 +1,30 @@
+{
+    "defaultSeverity": "error",
+    "jsRules": {},
+    "rules": {
+        "no-duplicate-variable": true,
+        "no-unused-variable": true,
+        "adjacent-overload-signatures": true,
+        "no-empty": true,
+        "no-inferrable-types": [
+            true
+        ],
+        "curly": true,
+        "no-eval": true,
+        "no-invalid-this": [
+            "check-function-in-method"
+        ],
+        "no-switch-case-fall-through": true,
+        "no-unused-expression": true,
+        "no-var-keyword": true,
+        "interface-name": [
+            "always-prefix"
+        ],
+        "label-position": true,
+        "no-conditional-assignment": true,
+        "class-name": true
+    },
+    "rulesDirectory": [
+        "node_modules/tslint-eslint-rules/dist/rules"
+    ]
+}
