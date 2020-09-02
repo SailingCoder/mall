@@ -1,0 +1,59 @@
+{
+  "name": "koa-nuxt",
+  "version": "1.0.0",
+  "description": "koa-nuxt",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development HOST=0.0.0.0 nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start:test": "cross-env NODE_ENV=test NUXT_HOST=0.0.0.0 NUXT_PORT=3333 node server/index.js",
+    "start:prod": "cross-env NODE_ENV=production NUXT_HOST=0.0.0.0 NUXT_PORT=3333 node server/index.js",
+    "start": "cross-env NODE_ENV=production NUXT_HOST=0.0.0.0 NUXT_PORT=3333 node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "amfe-flexible": "^2.2.1",
+    "clipboard": "^2.0.6",
+    "cross-env": "^5.2.0",
+    "echarts": "^4.8.0",
+    "http-proxy": "^1.17.0",
+    "koa": "^2.5.2",
+    "koa-body": "^4.2.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^7.4.0",
+    "koa-session2": "^2.2.8",
+    "koa-static": "^5.0.0",
+    "node-cache": "^4.2.0",
+    "nuxt": "^2.0.0",
+    "nuxt-class-component": "^1.2.1",
+    "superagent": "^4.0.0",
+    "superagent-logger": "^1.1.0",
+    "typescript": "^3.2.2",
+    "vant": "^2.9.0",
+    "vuex-typescript": "^3.0.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "^0.1.1",
+    "@types/http-proxy": "^1.16.2",
+    "@types/koa": "^2.0.47",
+    "@types/koa-router": "^7.0.35",
+    "@types/koa-static": "^4.0.0",
+    "@types/superagent": "^3.8.5",
+    "autoprefixer": "^9.8.5",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.14.1",
+    "nodemon": "^1.11.0",
+    "postcss-pxtorem": "^5.1.1",
+    "prettier": "1.14.3",
+    "sass-loader": "^7.1.0",
+    "ts-loader": "^5.3.1",
+    "vue-property-decorator": "^7.2.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
