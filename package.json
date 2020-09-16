@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development HOST=0.0.0.0 nodemon server/index.js --watch server",
     "build": "nuxt build",
-    "start:test": "cross-env NODE_ENV=test NUXT_HOST=0.0.0.0 NUXT_PORT=3333 node server/index.js",
-    "start:prod": "cross-env NODE_ENV=production NUXT_HOST=0.0.0.0 NUXT_PORT=3333 node server/index.js",
-    "start": "cross-env NODE_ENV=production NUXT_HOST=0.0.0.0 NUXT_PORT=3333 node server/index.js",
+    "start:test": "cross-env NODE_ENV=test NUXT_HOST=0.0.0.0 NUXT_PORT=3001 node server/index.js",
+    "start:prod": "cross-env NODE_ENV=production NUXT_HOST=0.0.0.0 NUXT_PORT=3001 node server/index.js",
+    "start": "cross-env NODE_ENV=production NUXT_HOST=0.0.0.0 NUXT_PORT=3001 node server/index.js",
     "generate": "nuxt generate"
   },
   "dependencies": {
