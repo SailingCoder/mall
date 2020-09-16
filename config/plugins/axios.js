@@ -8,7 +8,6 @@ export default function ({ $axios, redirect, store }) {
   })
 
   $axios.onResponse(response => {
-    console.log('axios', response.data)
     if(response.status == 200) {
       return response.data;
     }
@@ -23,14 +22,6 @@ export default function ({ $axios, redirect, store }) {
 
 
   $axios.interceptors.request.use(config => {
-      let nowDate = new Date()
-      let signTime = nowDate.getTime()
-      // console.log(1111)
-      // if (store.state.token != null && store.state.expireTime > nowDate.getTime()) {
-      //   config.headers.sign_time = signTime
-      //   config.headers.auth_Code = store.state.authCode
-      //   config.headers.sign = sha256.hmac(store.state.token, signTime + store.state.authCode)
-      // }
       return config
     },
     err => {
@@ -40,12 +31,10 @@ export default function ({ $axios, redirect, store }) {
 
 
   $axios.interceptors.response.use(response => {      
-      console.log('axios response', response)
       if(response.data.success == false && response.data.code == 30333){     
-          redirect('/login/login')
+          redirect('/login')
           return;      
-      }      
-      // console.log(response);            
+      }               
       return response    
 	}, err => {      
     // console.log('axios err', err)

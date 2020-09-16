@@ -1,17 +1,3 @@
-// function resize(){
-//     var htmlEle = document.documentElement;
-//     console.log('htmlEle', htmlEle)
-//     var htmlwidth = window.innerWidth; //浏览器时下窗口可视区域宽度
-//     console.log('htmlwidth', htmlwidth)
-//     console.log('htmlwidth', htmlwidth/10+'px')
-// // var rem = (win_width*20/2000);  //这个比例最好要和设计稿比例一致
-//     htmlEle.style.fontsize = htmlwidth/10+'px';
-// }
-// // resize();
-// window.addEventListener("resize",resize,false);
-
-// function add(){var html=document.documentElement;var hei=html.clientWidth;var fz=hei/375*100+"px";html.style.fontSize=fz};add();window.addEventListener("resize",add,false);
-
 (function flexible (window, document) {
     var docEl = document.documentElement
     var dpr = window.devicePixelRatio || 1

@@ -6,21 +6,16 @@ const koaBody = require("koa-body");
 const path = require('path');
 const { Nuxt, Builder } = require('nuxt');
 const session = require("koa-session2");
-const uuid = require("uuid");
 
 const { setConfig } = require("./utils/config");
 const { proxy } = require("./utils/proxy.js");
 const request = require("./utils/request");
-const { generalFileAsync, generalFile } = require("./utils/generalFile");
-
 const route = require("./route");
 const api = require("./api");
 
 const app = new Koa();
 const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT || 3001;
-
-// Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
 config.dev = !(app.env === 'production' || app.env === 'test')
 const proxyUrl = config.dev ? config.proxyUrl.dev : config.proxyUrl[app.env]
@@ -35,13 +30,11 @@ app.use(koaBody({
   formidable: {
     // uploadDir:path.join(__dirname,'public/upload/'), // 设置文件上传目录
     keepExtensions: true,    // 保持文件的后缀
-   
     maxFileSize: 50000*1024*1024,
     onFileBegin:(name,file) => { // 文件上传前的设置
       // console.log(`name: ${name}`);
       // console.log(file);
-    },
-   
+    }
   }
 }));
 
@@ -65,18 +58,6 @@ async function start() {
   if (config.dev) {
     const builder = new Builder(nuxt)
     await builder.build()
-  }
-
-  if(config.generalfile){
-    nuxt.hook('render:routeDone',function(url,result, {req, res}){
-      try {
-        if(res.statusCode === 200){
-          generalFile(url, result.html);
-        }
-      } catch (error) {
-        
-      }
-    });
   }
 
   app.use(async (ctx, next) => {
