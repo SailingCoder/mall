@@ -1,6 +1,7 @@
 
-const Koa = require('koa')
-const consola = require('consola')
+const Koa = require('koa');
+const app = new Koa();
+const consola = require('consola');
 const static = require('koa-static');
 const koaBody = require("koa-body");
 const path = require('path');
@@ -13,13 +14,11 @@ const request = require("./utils/request");
 const route = require("./route");
 const api = require("./api");
 
-const app = new Koa();
 const host = process.env.HOST || '0.0.0.0';
 const port = process.env.PORT || 3001;
 let config = require('../nuxt.config.js')
 config.dev = !(app.env === 'production' || app.env === 'test')
 const proxyUrl = config.dev ? config.proxyUrl.dev : config.proxyUrl[app.env]
-
 setConfig('proxyUrl', proxyUrl);
 console.log(app.env);
 
